@@ -109,6 +109,7 @@
 
   // ---- Imagem para o Instagram (Stories 1080x1920 ou Feed 1080x1350) ----
   var FONTE = '"Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif';
+  var SITE = "apuraeleicao2026.com.br";
 
   function retangulo(ctx, x, y, w, h, r) {
     ctx.beginPath();
@@ -149,7 +150,7 @@
     ctx.beginPath(); ctx.arc(60, H - 120, 200, 0, Math.PI * 2); ctx.fill();
 
     var M = 80;
-    var y = stories ? 260 : 100;
+    var y = stories ? 260 : 64;
 
     // Selo
     ctx.font = "800 34px " + FONTE;
@@ -177,7 +178,7 @@
       y += 48;
       ctx.fillText(l, M, y);
     });
-    y += stories ? 80 : 56;
+    y += stories ? 80 : 40;
 
     // Cartões dos candidatos, em ordem alfabética
     // Cada cartão tem 3 linhas: número + nome / quantidade em destaque / barra.
@@ -231,14 +232,22 @@
     });
 
     // Rodapé
-    var fy = H - (stories ? 200 : 100);
+    var fy = H - (stories ? 250 : 140);
     ctx.textAlign = "center";
-    ctx.fillStyle = "#ffffff";
-    ctx.font = "800 40px " + FONTE;
-    ctx.fillText("Faça o seu: " + location.host + "/afinidade.html", W / 2, fy);
     ctx.fillStyle = "#c9d4ff";
-    ctx.font = "500 28px " + FONTE;
-    ctx.fillText("Resultado individual · Não é pesquisa eleitoral nem enquete", W / 2, fy + 52);
+    ctx.font = "600 34px " + FONTE;
+    ctx.fillText("Faça o seu quiz em", W / 2, fy);
+    // Domínio em destaque; a fonte diminui se não couber na largura.
+    var tam = 56;
+    do {
+      ctx.font = "900 " + tam + "px " + FONTE;
+      tam -= 2;
+    } while (ctx.measureText(SITE).width > W - M * 2 && tam > 24);
+    ctx.fillStyle = "#ffd34d";
+    ctx.fillText(SITE, W / 2, fy + 66);
+    ctx.fillStyle = "#c9d4ff";
+    ctx.font = "500 26px " + FONTE;
+    ctx.fillText("Resultado individual · Não é pesquisa eleitoral nem enquete", W / 2, fy + 118);
     ctx.textAlign = "left";
     return cv;
   }
