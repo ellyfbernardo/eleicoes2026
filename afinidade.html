@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quiz: com quais propostas de Lula e Flávio Bolsonaro você concorda? — 2º turno 2026</title>
+  <meta name="description" content="Responda a 16 propostas dos planos de governo sem saber de quem é cada uma e descubra com qual candidato do 2º turno de 2026 você tem mais afinidade.">
+  <meta name="google-adsense-account" content="ca-pub-9078973827446715">
+  <link rel="stylesheet" href="assets/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9078973827446715" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="index.html"><span class="logo-mark">2º</span> Segundo Turno 2026</a>
+      <nav class="nav">
+        <a href="index.html">Início</a>
+        <a href="propostas.html">Propostas</a>
+        <a href="afinidade.html" aria-current="page">Quiz</a>
+        <a href="como-votar.html">Como votar</a>
+        <a href="apuracao.html" class="live">Apuração</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container prose">
+    <h1>Quiz de afinidade</h1>
+    <p class="lead muted">Você vai ler 16 propostas tiradas dos planos de governo de Flávio Bolsonaro e de Lula, <strong>sem saber de quem é cada uma</strong>. No final, mostramos com quais você mais concorda.</p>
+
+    <div class="progress" style="margin:16px 0 24px"><span id="quiz-barra" style="width:0"></span></div>
+
+    <div class="card" id="quiz-intro">
+      <h2 style="margin-top:0">Como funciona</h2>
+      <ul>
+        <li>São 8 propostas de cada candidato, uma de cada lado em 8 temas, em ordem aleatória.</li>
+        <li>Para cada uma, responda <strong>Concordo</strong>, <strong>Indiferente</strong> ou <strong>Discordo</strong>.</li>
+        <li>O resultado é só seu: as respostas ficam no seu navegador e não são enviadas nem guardadas.</li>
+      </ul>
+      <button class="btn" id="quiz-comecar" type="button">Começar o quiz</button>
+    </div>
+
+    <div class="card" id="quiz-box" hidden>
+      <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+        <span class="small muted" id="quiz-passo"></span>
+        <span class="badge" id="quiz-tema" style="background:#eef4ff;color:var(--brand-2);margin:0"></span>
+      </div>
+      <p id="quiz-texto" style="font-size:1.3rem;font-weight:700;margin:18px 0 22px;line-height:1.4"></p>
+      <div class="quiz-opcoes">
+        <button type="button" class="quiz-op sim" data-resp="sim">👍 Concordo</button>
+        <button type="button" class="quiz-op neutro" data-resp="neutro">😐 Indiferente</button>
+        <button type="button" class="quiz-op nao" data-resp="nao">👎 Discordo</button>
+      </div>
+      <button type="button" class="chip" id="quiz-voltar" style="margin-top:16px">← Voltar</button>
+    </div>
+
+    <div id="quiz-resultado" hidden>
+      <h2>Seu resultado</h2>
+      <p class="muted">Quantas das 8 propostas de cada candidato você marcou como “Concordo”.</p>
+      <div class="result-list" id="quiz-placar"></div>
+      <div class="card ig-card">
+        <div>
+          <h3 style="margin-top:0">📸 Poste seu resultado no Instagram</h3>
+          <p class="small muted">Escolha o formato, toque em compartilhar e selecione o Instagram. No computador, a imagem é baixada para você postar depois.</p>
+          <div class="tabs" style="margin-bottom:16px">
+            <button type="button" data-formato="stories">Stories</button>
+            <button type="button" data-formato="feed">Feed</button>
+          </div>
+          <div class="btn-row">
+            <button class="btn ig-btn" id="ig-compartilhar" type="button">Compartilhar imagem</button>
+            <button class="chip" id="ig-baixar" type="button">⬇ Baixar</button>
+          </div>
+        </div>
+        <img id="ig-preview" alt="Prévia da imagem do seu resultado para o Instagram">
+      </div>
+
+      <div class="btn-row" style="margin:20px 0">
+        <button class="chip" id="quiz-compartilhar" type="button">🔗 Convidar amigos para o quiz</button>
+        <button class="chip" id="quiz-refazer" type="button">↻ Refazer</button>
+        <a class="chip" href="propostas.html">Ver todas as propostas</a>
+      </div>
+
+      <div class="ad-wrap">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9078973827446715" data-ad-slot="0000000008" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      </div>
+
+      <h2>De quem era cada proposta</h2>
+      <div class="table-scroll">
+        <table class="uf-table">
+          <thead><tr><th>Proposta</th><th style="text-align:left">Candidato</th><th>Sua resposta</th></tr></thead>
+          <tbody id="quiz-detalhe"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="notice" style="margin-top:28px">
+      <strong>Isto não é uma pesquisa eleitoral nem uma enquete.</strong> O quiz não coleta, não soma e não divulga respostas de visitantes; ele apenas compara as suas respostas com propostas registradas nos planos de governo. O resultado não indica intenção de voto nem desempenho dos candidatos. Para ler as propostas completas, veja a página de <a href="propostas.html">propostas</a> e as fontes citadas nela.
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong style="color:#fff">Segundo Turno 2026</strong>
+        <p>Site informativo e independente, sem vínculo com partidos, candidatos ou com a Justiça Eleitoral. Resultados oficiais: <a href="https://resultados.tse.jus.br" rel="noopener" target="_blank">resultados.tse.jus.br</a>.</p>
+      </div>
+      <ul>
+        <li><a href="propostas.html">Propostas</a></li>
+        <li><a href="afinidade.html">Quiz de afinidade</a></li>
+        <li><a href="apuracao.html">Apuração</a></li>
+        <li><a href="como-votar.html">Como votar</a></li>
+      </ul>
+      <ul>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="privacidade.html">Privacidade</a></li>
+      </ul>
+    </div>
+  </footer>
+  <script src="assets/main.js"></script>
+  <script src="assets/quiz.js"></script>
+</body>
+</html>

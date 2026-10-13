@@ -231,3 +231,21 @@ details p { margin: 10px 0 0; }
   .result img { width: 48px; height: 48px; }
   .result .pct { font-size: 1.5rem; }
 }
+
+/* Quiz de afinidade */
+.quiz-opcoes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.quiz-op {
+  border: 2px solid var(--line); background: #fff; border-radius: 12px; padding: 14px 10px;
+  font-weight: 700; font-size: 1rem; cursor: pointer; color: var(--ink);
+}
+.quiz-op:hover, .quiz-op.active { border-color: var(--brand-2); background: #eef4ff; }
+.quiz-op.sim:hover, .quiz-op.sim.active { border-color: var(--ok); background: #e8f6ee; }
+.quiz-op.nao:hover, .quiz-op.nao.active { border-color: #c0392b; background: #fdecec; }
+#quiz-voltar:disabled { opacity: .4; cursor: default; }
+@media (max-width: 520px) { .quiz-opcoes { grid-template-columns: 1fr; } }
+.ig-card { display: grid; grid-template-columns: 1fr 220px; gap: 24px; align-items: center; margin-top: 20px; }
+.ig-card img { width: 100%; border-radius: 12px; box-shadow: var(--shadow); }
+.ig-btn { background: linear-gradient(45deg, #f58529, #dd2a7b 50%, #8134af); color: #fff; }
+@media (max-width: 620px) { .ig-card { grid-template-columns: 1fr; } .ig-card img { max-width: 260px; margin: 0 auto; } }
+.quiz-qtd { font-size: 3rem; line-height: 1; white-space: nowrap; }
+.quiz-qtd small { font-size: 1.1rem; color: var(--muted); font-weight: 800; }
