@@ -4,7 +4,7 @@ Páginas: index, propostas, apuracao (ao vivo, dados do TSE), como-votar, sobre,
 Não precisa de servidor/back-end: a apuração busca os JSON públicos do TSE direto do navegador.
 
 ## Antes de publicar
-1. Troque `ca-pub-0000000000000000` pelo seu ID do AdSense em TODOS os .html e no `ads.txt`
+1. Troque `ca-pub-9078973827446715` pelo seu ID do AdSense em TODOS os .html e no `ads.txt`
    (no ads.txt fica `pub-...`, sem o `ca-`).
 2. Troque os `data-ad-slot="000000000X"` pelos IDs dos blocos criados no AdSense
    (ou apague os blocos `<ins>` e use só Anúncios automáticos).
