@@ -250,37 +250,59 @@ details p { margin: 10px 0 0; }
 .quiz-qtd { font-size: 3rem; line-height: 1; white-space: nowrap; }
 .quiz-qtd small { font-size: 1.1rem; color: var(--muted); font-weight: 800; }
 
-/* Espaços "Anuncie seu negócio aqui" (página do quiz) */
-.biz-layout { display: grid; grid-template-columns: 1fr minmax(0, 780px) 1fr; column-gap: 40px; align-items: start; }
-@media (min-width: 1200px) { .biz-layout > main { width: 100%; } }
-.biz-rail { position: sticky; top: 96px; margin-top: 32px; width: 160px; }
-.biz-rail:first-child { justify-self: end; }
-.biz-rail:last-child { justify-self: start; }
+/* Espaços "Anuncie seu negócio aqui" (venda direta; conteúdo em assets/anuncios.js)
+   .biz-layout        conteúdo estreito (780px): laterais a partir de 1200px
+   .biz-layout.wide   conteúdo largo (1120px): laterais a partir de 1560px
+   .biz-banner        banner horizontal, sempre visível
+   .biz-banner.so-sem-lateral  só aparece quando as laterais estão escondidas */
+.biz-rail { display: none; }
 .biz-slot {
   position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;
   text-align: center; background: linear-gradient(180deg, #fffdf3, #fff6d6); border: 2px dashed #f0c64a;
   border-radius: 14px; padding: 28px 14px 18px; color: var(--ink); overflow: hidden;
 }
-.biz-rail .biz-slot { height: 600px; }
 .biz-slot strong { font-size: 1.15rem; line-height: 1.25; }
 .biz-slot p { font-size: .88rem; color: var(--muted); margin: 0; }
 .biz-slot .btn { padding: 10px 14px; font-size: .9rem; white-space: nowrap; }
-.biz-slot img { width: 100%; height: 100%; object-fit: cover; border-radius: 10px; }
-.biz-slot a:has(img) { display: block; width: 100%; height: 100%; }
 .biz-ico { font-size: 2.6rem; line-height: 1; }
 .biz-label {
   position: absolute; top: 6px; left: 0; right: 0; font-size: .62rem; letter-spacing: .08em;
   text-transform: uppercase; color: #9aa2b4; text-align: center;
 }
-.biz-mobile { display: none; }
+.biz-slot.biz-vendido { background: none; border: 0; padding: 18px 0 0; }
+.biz-link, .biz-link picture { display: block; width: 100%; }
+.biz-link img { width: 100%; height: auto; border-radius: 10px; }
 
-@media (max-width: 1199px) {
-  .biz-layout { display: block; }
-  .biz-rail { display: none; }
-  .biz-mobile { display: block; margin: 20px 0; }
-  .biz-mobile .biz-slot { flex-direction: row; text-align: left; min-height: 100px; padding: 22px 14px 12px; gap: 12px; }
-  .biz-mobile .biz-ico { font-size: 2rem; }
-  .biz-mobile .biz-txt { flex: 1; }
-  .biz-mobile strong { font-size: 1rem; display: block; }
-  .biz-mobile p { font-size: .82rem; }
+.biz-rail .biz-slot { height: 600px; }
+.biz-rail .biz-slot.biz-vendido { height: auto; }
+
+.biz-banner { margin: 28px auto; max-width: 728px; }
+.biz-banner .biz-slot { flex-direction: row; text-align: left; min-height: 96px; padding: 22px 18px 12px; gap: 14px; }
+.biz-banner .biz-slot.biz-vendido { padding: 18px 0 0; min-height: 0; }
+.biz-banner .biz-ico { font-size: 2.2rem; }
+.biz-banner .biz-txt { flex: 1; }
+.biz-banner strong { font-size: 1.05rem; display: block; }
+.biz-banner p { font-size: .85rem; }
+
+@media (min-width: 1200px) {
+  .biz-layout:not(.wide) { display: grid; grid-template-columns: 1fr minmax(0, 780px) 1fr; column-gap: 40px; align-items: start; }
+  .biz-layout:not(.wide) > main { width: 100%; }
+  .biz-layout:not(.wide) > .biz-rail { display: block; }
+  .biz-layout:not(.wide) .so-sem-lateral { display: none; }
+}
+@media (min-width: 1560px) {
+  .biz-layout.wide { display: grid; grid-template-columns: 1fr minmax(0, 1120px) 1fr; column-gap: 40px; align-items: start; }
+  .biz-layout.wide > main { width: 100%; }
+  .biz-layout.wide > .biz-rail { display: block; }
+  .biz-layout.wide .so-sem-lateral { display: none; }
+}
+.biz-layout > .biz-rail { position: sticky; top: 96px; margin-top: 32px; width: 160px; }
+.biz-layout > .biz-rail:first-child { justify-self: end; }
+.biz-layout > .biz-rail:last-child { justify-self: start; }
+
+@media (max-width: 520px) {
+  .biz-banner .biz-slot { padding: 22px 12px 12px; gap: 10px; }
+  .biz-banner .biz-ico { font-size: 1.8rem; }
+  .biz-banner strong { font-size: .98rem; }
+  .biz-banner p { font-size: .8rem; }
 }

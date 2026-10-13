@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Quiz: com quais propostas de Lula e Flávio Bolsonaro você concorda? — 2º turno 2026</title>
   <meta name="description" content="Responda a 16 propostas dos planos de governo sem saber de quem é cada uma e descubra com qual candidato do 2º turno de 2026 você tem mais afinidade.">
+  <meta name="google-site-verification" content="PFwN-xbymzjgqkIRQPyGbmow8MjM9cMsyW8Aa_NA2b0">
   <meta name="google-adsense-account" content="ca-pub-9078973827446715">
   <link rel="stylesheet" href="assets/style.css">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9078973827446715" crossorigin="anonymous"></script>
@@ -23,22 +24,8 @@
     </div>
   </header>
 
-  <!--
-    Espaços "Anuncie seu negócio aqui" (venda direta).
-    Quando vender um espaço, troque o conteúdo de dentro do .biz-slot por:
-      <a href="SITE-DO-ANUNCIANTE" target="_blank" rel="sponsored noopener"><img src="assets/anuncios/arquivo.jpg" alt="Nome do anunciante"></a>
-    Tamanhos da arte: laterais 160x600 px (desktop) · banner do celular 640x200 px (exibido em 320x100).
-  -->
   <div class="biz-layout">
-  <aside class="biz-rail" aria-label="Espaço publicitário">
-    <div class="biz-slot">
-      <span class="biz-label">Espaço publicitário</span>
-      <div class="biz-ico">📣</div>
-      <strong>Anuncie seu negócio aqui</strong>
-      <p>Apareça para quem está acompanhando as eleições 2026.</p>
-      <a class="btn" href="mailto:ellyfbusiness@gmail.com?subject=Quero%20anunciar%20no%20Apura%20Elei%C3%A7%C3%A3o%202026">Quero anunciar</a>
-    </div>
-  </aside>
+  <aside class="biz-rail" data-anuncio="quiz-lateral-esq"></aside>
 
   <main class="container prose">
     <h1>Quiz de afinidade</h1>
@@ -70,18 +57,8 @@
       <button type="button" class="chip" id="quiz-voltar" style="margin-top:16px">← Voltar</button>
     </div>
 
-    <!-- Banner do celular: abaixo das perguntas durante o quiz e no topo do resultado ao final. -->
-    <div class="biz-mobile" aria-label="Espaço publicitário">
-      <div class="biz-slot">
-        <span class="biz-label">Espaço publicitário</span>
-        <div class="biz-ico">📣</div>
-        <div class="biz-txt">
-          <strong>Anuncie seu negócio aqui</strong>
-          <p>Apareça para quem acompanha as eleições 2026.</p>
-        </div>
-        <a class="btn" href="mailto:ellyfbusiness@gmail.com?subject=Quero%20anunciar%20no%20Apura%20Elei%C3%A7%C3%A3o%202026">Anunciar</a>
-      </div>
-    </div>
+    <!-- Celular/telas menores: abaixo das perguntas durante o quiz e no topo do resultado ao final. -->
+    <div class="biz-banner so-sem-lateral" data-anuncio="quiz-banner"></div>
 
     <div id="quiz-resultado" hidden>
       <h2>Seu resultado</h2>
@@ -127,15 +104,7 @@
     </div>
   </main>
 
-  <aside class="biz-rail" aria-label="Espaço publicitário">
-    <div class="biz-slot">
-      <span class="biz-label">Espaço publicitário</span>
-      <div class="biz-ico">🚀</div>
-      <strong>Sua marca neste espaço</strong>
-      <p>Divulgue seu negócio durante o 2º turno.</p>
-      <a class="btn" href="mailto:ellyfbusiness@gmail.com?subject=Quero%20anunciar%20no%20Apura%20Elei%C3%A7%C3%A3o%202026">Quero anunciar</a>
-    </div>
-  </aside>
+  <aside class="biz-rail" data-anuncio="quiz-lateral-dir"></aside>
   </div>
 
   <footer class="site-footer">
@@ -158,6 +127,7 @@
     </div>
   </footer>
   <script src="assets/main.js"></script>
+  <script src="assets/anuncios.js"></script>
   <script src="assets/quiz.js"></script>
 </body>
 </html>
