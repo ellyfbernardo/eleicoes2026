@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Apuração ao vivo 2º turno 2026 — Lula x Flávio Bolsonaro | Resultado por estado</title>
+  <meta name="description" content="Acompanhe em tempo real a apuração do 2º turno da eleição presidencial de 25/10/2026: percentual de cada candidato, votos, seções totalizadas e resultado por estado, com dados oficiais do TSE.">
+  <meta name="google-adsense-account" content="ca-pub-0000000000000000">
+  <link rel="preconnect" href="https://resultados.tse.jus.br">
+  <link rel="stylesheet" href="assets/style.css">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0000000000000000" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="index.html"><span class="logo-mark">2º</span> Segundo Turno 2026</a>
+      <nav class="nav">
+        <a href="index.html">Início</a>
+        <a href="propostas.html">Propostas</a>
+        <a href="como-votar.html">Como votar</a>
+        <a href="apuracao.html" class="live" aria-current="page">Apuração</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="status-bar">
+      <div>
+        <h1 style="margin-bottom:4px">Apuração ao vivo</h1>
+        <p class="muted" style="margin:0">Presidente · <span id="turno-nome"></span></p>
+      </div>
+      <div class="tabs" role="tablist">
+        <button type="button" data-turno="t2">2º turno</button>
+        <button type="button" data-turno="t1">1º turno</button>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:20px">
+      <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap">
+        <strong><span id="secoes-pct">0,00%</span> das seções totalizadas</strong>
+        <span class="small muted" id="secoes-txt"></span>
+      </div>
+      <div class="progress" style="margin:10px 0"><span id="secoes-bar" style="width:0"></span></div>
+      <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:center">
+        <span class="small muted" id="atualizado">Carregando…</span>
+        <button class="chip" id="btn-atualizar" type="button">↻ Atualizar agora</button>
+      </div>
+      <p class="notice" id="status-final" hidden style="margin:12px 0 0">Totalização concluída pelo TSE.</p>
+      <p class="notice" id="erro" hidden style="margin:12px 0 0">Não foi possível acessar os dados do TSE agora. Tentaremos de novo automaticamente.</p>
+    </div>
+
+    <section class="section">
+      <div class="result-list" id="lista"></div>
+      <p class="small muted" style="margin-top:10px">Percentuais calculados sobre os votos válidos (excluídos brancos e nulos). A página se atualiza sozinha a cada 15 segundos.</p>
+    </section>
+
+    <div class="ad-wrap">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-0000000000000000" data-ad-slot="0000000005" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <section class="section">
+      <h2>Comparecimento e votos</h2>
+      <div class="stats" id="stats"></div>
+    </section>
+
+    <section class="section">
+      <h2>Resultado por estado</h2>
+      <div class="grid-2" style="align-items:start">
+        <div class="card">
+          <div class="uf-map" id="mapa"></div>
+          <div class="uf-legend" id="legenda"></div>
+          <p class="small muted" style="text-align:center;margin:8px 0 0">Cor indica quem lidera no estado; quanto mais forte, maior a vantagem.</p>
+        </div>
+        <div class="table-scroll">
+          <table class="uf-table">
+            <thead><tr><th>Estado</th><th>Seções</th><th id="th-a">—</th><th id="th-b">—</th></tr></thead>
+            <tbody id="uf-body"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <div class="ad-wrap">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-0000000000000000" data-ad-slot="0000000006" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    </div>
+
+    <section class="section prose">
+      <h2>Perguntas frequentes sobre a apuração</h2>
+      <details>
+        <summary>A que horas sai o resultado do 2º turno?</summary>
+        <p>As urnas fecham às 17h (horário de Brasília) em todo o país, e a divulgação começa logo em seguida. Em eleições recentes, o resultado matemático do 2º turno presidencial foi definido poucas horas depois do fechamento.</p>
+      </details>
+      <details>
+        <summary>De onde vêm esses números?</summary>
+        <p>Dos arquivos públicos de divulgação do Tribunal Superior Eleitoral (resultados.tse.jus.br), os mesmos usados pelo portal oficial. Este site apenas exibe os dados; o resultado oficial é sempre o publicado pelo TSE.</p>
+      </details>
+      <details>
+        <summary>Por que são considerados só os votos válidos?</summary>
+        <p>Pela Constituição, vence o candidato com a maioria absoluta dos votos válidos. Votos brancos e nulos não entram no cálculo.</p>
+      </details>
+      <details>
+        <summary>O que significa “seções totalizadas”?</summary>
+        <p>É a proporção de seções eleitorais cujos boletins de urna já foram recebidos e somados pela Justiça Eleitoral. Com 100% das seções totalizadas, a apuração está completa.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong style="color:#fff">Segundo Turno 2026</strong>
+        <p>Site informativo e independente, sem vínculo com partidos, candidatos ou com a Justiça Eleitoral. Resultados oficiais: <a href="https://resultados.tse.jus.br" rel="noopener" target="_blank">resultados.tse.jus.br</a>.</p>
+      </div>
+      <ul>
+        <li><a href="propostas.html">Propostas</a></li>
+        <li><a href="apuracao.html">Apuração</a></li>
+        <li><a href="como-votar.html">Como votar</a></li>
+      </ul>
+      <ul>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="privacidade.html">Privacidade</a></li>
+      </ul>
+    </div>
+  </footer>
+  <script src="assets/main.js"></script>
+  <script src="assets/apuracao.js"></script>
+</body>
+</html>
